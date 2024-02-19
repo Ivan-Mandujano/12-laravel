@@ -11,7 +11,7 @@
         <a href= "/info/alumno"> Navegar al informacion de alumno </a>
         <a href= "/info/prof"> Navegar al informacion de maestro</a>
 
-        <a href= "/contacto"> Navegar a contacto </a>
+        <a href= "/create"> Navegar a contacto </a>
     </div>
 
     {{ $type }}

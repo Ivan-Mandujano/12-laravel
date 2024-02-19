@@ -12,7 +12,7 @@
         <a href= "/info/prof"> Navegar al informacion de maestro</a>
 
     </div>
-    <form action="/comentario-guarda" method="POST">
+    <form action="{{route('comentario.store')}}" method="POST">
     @csrf
     <div>
         <h3>Ingrese su nombre:</h3>
