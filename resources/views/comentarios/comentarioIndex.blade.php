@@ -9,7 +9,7 @@
 <body>
     <a href="{{route('comentario.create')}}">Nuevo comentario</a>
     <h1>Lista de comentarios</h1>
-    <table>
+    <table border= "1">
         <thead>
             <tr>
                 <th>
@@ -33,7 +33,7 @@
             @foreach ($comentarios as $comentario)
             <tr>
                 <td>
-                    {{$comentario->nombre}}
+                    {{$comentario->nombres}}
                 </td>
                 <td>
                     {{$comentario->correo}}
@@ -45,7 +45,7 @@
                     {{$comentario->created_at}}
                 </td>
                 <td>
-                    <a href="{{route('comentario.show'), $comentario->id}}">Detalles</a>
+                    <a href="{{ route('comentario.show', $comentario->id) }}">Detalles</a>
                 </td>
             </tr>
             @endforeach

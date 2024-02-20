@@ -13,7 +13,7 @@ class ComentarioController extends Controller
     public function index()
     {
         $comentarios = Comentario::all();
-        return view('comentario.comentarioIndex', compact('comentarios'));
+        return view('comentarios.comentarioIndex', compact('comentarios'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ComentarioController extends Controller
      */
     public function create()
     {
-        return view('comentario.comentarioCreate');
+        return view('comentarios.comentarioCreate');
     }
 
     /**
@@ -31,16 +31,16 @@ class ComentarioController extends Controller
     {
         //dd($request->all(), $request->nombre, $request->input('nombre')); 
 
-        //return "Si llegue a la ruta"; 
+        //return "Si llegue a la ruta";
         //recibir datos
 
         //validar
 
         //guardar
         $comentario = new Comentario();
-        $comentario->nombre = $request->nombre;
-        $comentario->correo = $request->correo;
-        $comentario->comentario = $request->comentario;
+        $comentario->nombres = $request->nameInput;
+        $comentario->correo = $request->correoInput;
+        $comentario->comentario = $request->extra;
         $comentario->ciudad = $request->ciudad;
         $comentario->save();//guarda en la base de datos toda la informacion mencionada en la parte de arriba
 
@@ -53,7 +53,7 @@ class ComentarioController extends Controller
      */
     public function show(Comentario $comentario)
     {
-        return view('comentario.comentarioShow', compact('comentario'));
+        return view('comentarios.comentarioShow', compact('comentario'));
     }
 
     /**

@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('comentarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres')->primary();
+            $table->string('nombres');
             $table->string('correo');
             $table->string('ciudad');
+            $table->string('comentario');
+            $table->timestamp('updated_at')->nullable();
             $table->timestamp('created_at')->nullable();
+
         });
     }
 
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('comentarios');
     }
 };

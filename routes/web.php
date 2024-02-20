@@ -26,4 +26,4 @@ Route::get('/create',[Comentario::class, 'create']);
 
 Route::post('/comentario-guarda',[Comentario::class, 'store']);
 */
-Route::resource('comentario', ComentarioController::class);
+Route::resource('/comentario', ComentarioController::class);

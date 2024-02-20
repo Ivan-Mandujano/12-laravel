@@ -20,7 +20,7 @@
     </div>
     <div>
         <h3>Ingrese su correo:</h3>
-        <input type="text" name="correoInput" id="CorreoInput">
+        <input type="text" name="correoInput" id="correoInput">
     </div>
     <div>
         <h3>Ingrese su contraseña:</h3>
@@ -44,7 +44,7 @@
     </div>
     <div>
         <h3>Lugar de contacto:</h3>
-        <select>
+        <select id="ciudad" name="ciudad">
             <option value="gdl">Guadalajara</option>
             <option value="zapopan">Zapopan</option>
             <option value="tlaquepaque">San Pedro Tlaquepaque</option>
