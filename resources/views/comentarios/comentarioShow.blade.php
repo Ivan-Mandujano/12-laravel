@@ -9,10 +9,10 @@
 <body>
     <h1>Detalle del comentario</h1>
     <ul>
-        <li>Nombre: {{$comentario->nombre</li>
-        <li>Correo: {{$comentario->correo</li>
-        <li>Comentario: {{$comentario->comentario</li>
-        <li>Ciudad: {{$comentario->ciudad</li>
+        <li>Nombre: {{$comentario->nombres}}</li>
+        <li>Correo: {{$comentario->correo}}</li>
+        <li>Comentario: {{$comentario->comentario}}</li>
+        <li>Ciudad: {{$comentario->ciudad}}</li>
     </ul>
 </body>
 </html>
