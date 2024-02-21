@@ -46,6 +46,13 @@
                 </td>
                 <td>
                     <a href="{{ route('comentario.show', $comentario->id) }}">Detalles</a>
+                    <a href="{{ route('comentario.edit', $comentario->id) }}">editar</a>
+                    <form action="{{ route('comentario.destroy', $comentario) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Eliminar">
+                    </form>
+
                 </td>
             </tr>
             @endforeach

@@ -35,7 +35,12 @@ class ComentarioController extends Controller
         //recibir datos
 
         //validar
-
+        $request->validate([
+            'nameInput' => 'required|max:255',
+            'correoInput' => ['required', 'email', 'max:255'],
+            'extra' => ['required', 'min:5'],
+            'ciudad' => 'required',
+        ]);
         //guardar
         $comentario = new Comentario();
         $comentario->nombres = $request->nameInput;
@@ -59,24 +64,38 @@ class ComentarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Comentario $comentario)
     {
-        //
+        return view('comentarios.comentarioEdit', compact('comentario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comentario $comentario)
     {
-        //
+        //validar
+        $request->validate([
+            'nameInput' => 'required|max:255',
+            'correoInput' => ['required', 'email', 'max:255'],
+            'extra' => ['required', 'min:5'],
+            'ciudad' => 'required',
+        ]);
+        //actualizar
+        $comentario->nombres = $request->nameInput;
+        $comentario->correo = $request->correoInput;
+        $comentario->comentario = $request->extra;
+        $comentario->ciudad = $request->ciudad;
+        $comentario->save();
+        return redirect()->route('comentario.show',$comentario);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comentario $comentario)
     {
-        //
+        $comentario->delete();
+        return redirect()->route('comentario.index',$comentario);
     }
 }
